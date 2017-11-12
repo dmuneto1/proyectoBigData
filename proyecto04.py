@@ -6,7 +6,7 @@ import sys
 
 if __name__ == '__main__':
     if len(sys.argv) < 4:
-        print("USAGE: python proyecto04.py <pathFiles> <k> <maxIterations>")
+        print("USAGE: ./spark-submit proyecto04.py <pathFiles> <k> <maxIterations>")
         sys.exit(1)
     ruta = sys.argv[1]
     k = int(sys.argv[2])
