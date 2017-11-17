@@ -50,6 +50,9 @@ La solución fue pensanda en ambientes de pyspark, en la cúal se utilizó la bi
 
 Algunos ejemplos fueron tomados de: https://github.com/apache/spark
 
+![alt text](https://preview.ibb.co/euEco6/estado_Normal.png)
+![alt text](https://preview.ibb.co/euEco6/estado_Normal.png)
+![alt text](https://preview.ibb.co/euEco6/estado_Normal.png)
 
 # 6.Bibliografía:
 
