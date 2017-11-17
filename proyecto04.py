@@ -6,11 +6,12 @@ import sys
 
 if __name__ == '__main__':
     if len(sys.argv) < 4:
-        print("USAGE: python proyecto04.py <pathFiles> <k> <maxIterations>")
+        print("USAGE: python proyecto04.py <filesPath> <outputPath> <k> <maxIterations>")
         sys.exit(1)
     ruta = sys.argv[1]
-    k = int(sys.argv[2])
-    maxIt = int(sys.argv[3])
+    rutaOut = sys.argv[2]
+    k = int(sys.argv[3])
+    maxIt = int(sys.argv[4])
     #Spark Context
     sc = SparkContext(appName="Practica4")
     #Leer archivos de la ruta especificada
@@ -24,7 +25,7 @@ if __name__ == '__main__':
     #Calcula la frecuencia de los terminos en los documentos
     tf = hashingTF.transform(documentos)
     #Calcula la importancia de los terminos en el cluster
-    idf = IDF().fit(tf)
+    idf = IDF(minDocFreq=2).fit(tf)
     #Calcula el valor final al multiplicar tf e idf
     tfidf = idf.transform(tf)
     #Se ejecuta KMeans y se obtiene el modelo
@@ -35,19 +36,12 @@ if __name__ == '__main__':
     # y como valor el cluster al que pertenece
     dictionary = dict(zip(nombreArchivos, clusterid))
 
-    #Se calcula el error del clustering con el algoritmo Within Set Sum of Squared Errors
-    #Se utiliza para calcular el K optimo
-    def error(point):
-        center = clusters.centers[clusters.predict(point)]
-        return sqrt(sum([x**2 for x in (point - center)]))
-    WSSSE = tfidf.map(lambda point: error(point)).reduce(lambda x, y: x + y)
-
-    #Almaceno en un archivo los resultados
-    file = open("resultadoP4.txt","w")
-    file.write("Clusters: \n")
-    file.write(str(dictionary))
-    file.write("\nTotal Cost: \n" +str(clusters.computeCost(tfidf))+'\n')
-    file.write("Within Set Sum of Squared Error = " + str(WSSSE)+'\n')
+    #Guardar en el archivo la salida
+    d = sc.parallelize(dictionary.items())
+    #Almacena en un solo archivo
+    d.coalesce(1).saveAsTextFile(rutaOut)
+    #Cada RDD almacena en un archivo
+    #d.saveAsTextFile(rutaOut)
 
     #Se cierra el Spark Context
     sc.stop()
