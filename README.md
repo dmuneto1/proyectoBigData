@@ -35,13 +35,13 @@ Se utilizaron algoritmos tales como:
 
 
 #### TFIDF: 
-
 Frecuencia de término – frecuencia inversa de documento (o sea, la frecuencia de ocurrencia del término en la colección de documentos), es una medida numérica que expresa cuán relevante es una palabra para un documento en una colección. Esta medida se utiliza a menudo como un factor de ponderación en la recuperación de información y la minería de texto. El valor tf-idf aumenta proporcionalmente al número de veces que una palabra aparece en el documento, pero es compensada por la frecuencia de la palabra en la colección de documentos, lo que permite manejar el hecho de que algunas palabras son generalmente más comunes que otras.
 
 
 #### KMeans:
 K-means es un método de agrupamiento, que tiene como objetivo la partición de un conjunto de n observaciones en k grupos en el que cada observación pertenece al grupo cuyo valor medio es más cercano. Es un método utilizado en minería de datos. El código para el Kmeans se obtuvo de varios links y repositorios de dónde se trató de entender su funcionamiento y gracias a los cuáles se pudo realizar el KMeans que se encuentra en los programas realizados.
 
+#### Esquema de implementación:
 En la siguiente figura, las líneas rojas representan transformación y las verdes operación.
 
 ![alt text](https://image.ibb.co/gFSRHm/diagrama_BD.png)
@@ -52,6 +52,8 @@ La solución fue pensanda en ambientes de pyspark, en la cúal se utilizó la bi
 
 Algunos ejemplos fueron tomados de: https://github.com/apache/spark
 
+#### Resultados:
+Esto se realizó con datasets de diferentes tamaños, al igual que con distintas k. Los resultados se muestran en la siguiente tabla.
 ![alt text](https://image.ibb.co/eXHAcm/resultados_B.png)
 
 # 6.Bibliografía:
