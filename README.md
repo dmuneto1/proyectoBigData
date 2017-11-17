@@ -42,7 +42,9 @@ Frecuencia de término – frecuencia inversa de documento (o sea, la frecuencia
 #### KMeans:
 K-means es un método de agrupamiento, que tiene como objetivo la partición de un conjunto de n observaciones en k grupos en el que cada observación pertenece al grupo cuyo valor medio es más cercano. Es un método utilizado en minería de datos. El código para el Kmeans se obtuvo de varios links y repositorios de dónde se trató de entender su funcionamiento y gracias a los cuáles se pudo realizar el KMeans que se encuentra en los programas realizados.
 
+En la siguiente figura, las líneas rojas representan transformación y las verdes operación.
 
+![alt text](https://image.ibb.co/gFSRHm/diagrama_BD.png)
 
 # 5. Análisis de solución:
 
@@ -50,9 +52,7 @@ La solución fue pensanda en ambientes de pyspark, en la cúal se utilizó la bi
 
 Algunos ejemplos fueron tomados de: https://github.com/apache/spark
 
-![alt text](https://preview.ibb.co/euEco6/estado_Normal.png)
-![alt text](https://preview.ibb.co/euEco6/estado_Normal.png)
-![alt text](https://preview.ibb.co/euEco6/estado_Normal.png)
+![alt text](https://image.ibb.co/eXHAcm/resultados_B.png)
 
 # 6.Bibliografía:
 
