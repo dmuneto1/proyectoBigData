@@ -3,8 +3,10 @@
 #### EJECUCIÓN
 
 Cuando se requiera ejecutar el programa se debe estar en la carpeta donde se encuentra y se debe poner la siguiente línea,
-$ /bin/spark-submit practica04.py /{Carpeta donde se encuentran los documentos}/ {K= k de Kmeans} {Iteraciones del Kmeans}
-Ejp: /bin/spark-submit practica4.py /datasets/gutenberg-txt-es/ 10 450
+$ /bin/spark-submit practica04.py /{Carpeta donde se encuentran los documentos}/ /{Carpeta donde se almacenará la salida}/  {K= k de Kmeans} {Iteraciones del Kmeans}
+Ejp local: /bin/spark-submit practica4.py /datasets/gutenberg-txt-es/ 10 450
+Ejp: spark-submit --master yarn --deploy-mode cluster proyecto04.py hdfs:///datasets/gutenberg-txt-es/*.txt hdfs:///user/dmuneto1/pruebaT 4 100
+
 
 
 # 1. Realizado por:
