@@ -55,7 +55,7 @@ La solución fue pensanda en ambientes de pyspark, en la cúal se utilizó la bi
 Algunos ejemplos fueron tomados de: https://github.com/apache/spark
 
 #### Resultados:
-Esto se realizó con datasets de diferentes tamañosy también con distintas k. Los resultados se muestran en la siguiente tabla.
+Esto se realizó con datasets de diferentes tamaños y también con distintas k. Los resultados se muestran en la siguiente tabla.
 
 ![alt text](https://image.ibb.co/eXHAcm/resultados_B.png)
 
