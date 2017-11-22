@@ -2,6 +2,7 @@ from pyspark import SparkContext
 from math import sqrt
 from pyspark.mllib.feature import HashingTF, IDF
 from pyspark.mllib.clustering import KMeans
+from pyspark.ml.feature import StopWordsRemover
 import sys
 
 if __name__ == '__main__':
@@ -25,7 +26,7 @@ if __name__ == '__main__':
     #Calcula la frecuencia de los terminos en los documentos
     tf = hashingTF.transform(documentos)
     #Calcula la importancia de los terminos en el cluster
-    idf = IDF(minDocFreq=2).fit(tf)
+    idf = IDF(minDocFreq=10).fit(tf)
     #Calcula el valor final al multiplicar tf e idf
     tfidf = idf.transform(tf)
     #Se ejecuta KMeans y se obtiene el modelo
